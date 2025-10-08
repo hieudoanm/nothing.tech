@@ -3,12 +3,12 @@ name: Continuous Integration
 on:
   push:
     branches:
-      - 'master'
-      - 'develop'
-      - 'hotfix/**'
-      - 'feature/**'
-      - 'renovate/**'
-      - 'dependabot/**'
+      - "master"
+      - "develop"
+      - "hotfix/**"
+      - "feature/**"
+      - "renovate/**"
+      - "dependabot/**"
 
 jobs:
   ci:
@@ -24,14 +24,14 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
-          version: '10.18.0'
+          version: "10.18.0"
       - name: Install Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: '24.9.0'
+          node-version: "24.9.0"
       - name: Install Dependencies
         run: pnpm install
       - name: Linting
         run: pnpm run lint
       - name: Build Production
-        run: pnpm run build --concurrency 1
+        run: pnpm run build
