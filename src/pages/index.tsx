@@ -1,115 +1,268 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+import { NothingApp } from '@nothing/types';
+import { NextPage } from 'next';
+import Link from 'next/link';
+import {
+  FaBus,
+  FaCalculator,
+  FaCalendarDays,
+  FaChartLine,
+  FaClock,
+  FaCompass,
+  FaEnvelopesBulk,
+  FaFileLines,
+  FaFileZipper,
+  FaFirefoxBrowser,
+  FaFutbol,
+  FaGamepad,
+  FaGear,
+  FaHeart,
+  FaHouseChimney,
+  FaImages,
+  FaLanguage,
+  FaMapLocationDot,
+  FaMessage,
+  FaMobile,
+  FaMusic,
+  FaNewspaper,
+  FaPalette,
+  FaPhone,
+  FaRectangleList,
+  FaTemperatureFull,
+  FaWallet,
+  FaYoutube,
+} from 'react-icons/fa6';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const HomePage: NextPage = () => {
+  const apps: NothingApp[] = [
+    {
+      id: 'browser',
+      href: 'browser',
+      name: 'browser',
+      shortName: 'browser',
+      icon: <FaFirefoxBrowser className="text-2xl" />,
+    },
+    {
+      id: 'calendar',
+      href: 'calendar',
+      name: 'calendar',
+      shortName: 'calendar',
+      icon: <FaCalendarDays className="text-2xl" />,
+    },
+    {
+      id: 'calculator',
+      href: 'calculator',
+      name: 'calculator',
+      shortName: 'calculator',
+      icon: <FaCalculator className="text-2xl" />,
+    },
+    {
+      id: 'clock',
+      href: 'clock',
+      name: 'clock',
+      shortName: 'clock',
+      icon: <FaClock className="text-2xl" />,
+    },
+    {
+      id: 'colors',
+      href: 'colors',
+      name: 'colors',
+      shortName: 'colors',
+      icon: <FaPalette className="text-2xl" />,
+    },
+    {
+      id: 'compass',
+      href: 'compass',
+      name: 'compass',
+      shortName: 'compass',
+      icon: <FaCompass className="text-2xl" />,
+    },
+    {
+      id: 'devices',
+      href: 'devices',
+      name: 'devices',
+      shortName: 'devices',
+      icon: <FaMobile className="text-2xl" />,
+    },
+    {
+      id: 'files',
+      href: 'files',
+      name: 'files',
+      shortName: 'files',
+      icon: <FaFileZipper className="text-2xl" />,
+    },
+    {
+      id: 'fitness',
+      href: 'fitness',
+      name: 'fitness',
+      shortName: 'fitness',
+      icon: <FaHeart className="text-2xl" />,
+    },
+    {
+      id: 'games',
+      href: 'games',
+      name: 'games',
+      shortName: 'games',
+      icon: <FaGamepad className="text-2xl" />,
+    },
+    {
+      id: 'health',
+      href: 'health',
+      name: 'health',
+      shortName: 'health',
+      icon: <FaTemperatureFull className="text-2xl" />,
+    },
+    {
+      id: 'home',
+      href: 'home',
+      name: 'home',
+      shortName: 'home',
+      icon: <FaHouseChimney className="text-2xl" />,
+    },
+    {
+      id: 'mail',
+      href: 'mail',
+      name: 'mail',
+      shortName: 'mail',
+      icon: <FaEnvelopesBulk className="text-2xl" />,
+    },
+    {
+      id: 'maps',
+      href: 'maps',
+      name: 'maps',
+      shortName: 'maps',
+      icon: <FaMapLocationDot className="text-2xl" />,
+    },
+    {
+      id: 'messages',
+      href: 'messages',
+      name: 'messages',
+      shortName: 'messages',
+      icon: <FaMessage className="text-2xl" />,
+    },
+    {
+      id: 'music',
+      href: 'music',
+      name: 'music',
+      shortName: 'music',
+      icon: <FaMusic className="text-2xl" />,
+    },
+    {
+      id: 'news',
+      href: 'news',
+      name: 'news',
+      shortName: 'news',
+      icon: <FaNewspaper className="text-2xl" />,
+    },
+    {
+      id: 'notes',
+      href: 'notes',
+      name: 'notes',
+      shortName: 'notes',
+      icon: <FaFileLines className="text-2xl" />,
+    },
+    {
+      id: 'phone',
+      href: 'phone',
+      name: 'phone',
+      shortName: 'phone',
+      icon: <FaPhone className="text-2xl" />,
+    },
+    {
+      id: 'photos',
+      href: 'photos',
+      name: 'photos',
+      shortName: 'photos',
+      icon: <FaImages className="mx-auto text-2xl" />,
+    },
+    {
+      id: 'settings',
+      href: 'settings',
+      name: 'settings',
+      shortName: 'settings',
+      icon: <FaGear className="text-2xl" />,
+    },
+    {
+      id: 'sports',
+      href: 'sports',
+      name: 'sports',
+      shortName: 'sports',
+      icon: <FaFutbol className="text-2xl" />,
+    },
+    {
+      id: 'stock',
+      href: 'stock',
+      name: 'stock',
+      shortName: 'stock',
+      icon: <FaChartLine className="text-2xl" />,
+    },
+    {
+      id: 'tasks',
+      href: 'tasks',
+      name: 'tasks',
+      shortName: 'tasks',
+      icon: <FaRectangleList className="text-2xl" />,
+    },
+    {
+      id: 'translate',
+      href: 'translate',
+      name: 'translate',
+      shortName: 'translate',
+      icon: <FaLanguage className="text-2xl" />,
+    },
+    {
+      id: 'transportation',
+      href: 'transportation',
+      name: 'transportation',
+      shortName: 'transportation',
+      icon: <FaBus className="text-2xl" />,
+    },
+    {
+      id: 'videos',
+      href: 'videos',
+      name: 'videos',
+      shortName: 'videos',
+      icon: <FaYoutube className="text-2xl" />,
+    },
+    {
+      id: 'wallet',
+      href: 'wallet',
+      name: 'wallet',
+      shortName: 'wallet',
+      icon: <FaWallet className="text-2xl" />,
+    },
+  ];
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export default function Home() {
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20`}
-    >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/pages/index.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="h-screen w-screen overflow-hidden md:h-screen">
+      <div className="container mx-auto flex h-full flex-col gap-y-4 p-4 md:gap-y-8 md:p-8">
+        <div className="grid h-full grid-cols-4 grid-rows-7 gap-4 md:grid-cols-7 md:grid-rows-4 md:gap-8">
+          {apps.map(({ id = '', href = '', name = '', shortName = '', icon = <>
+
+              </> }) => {
+            return (
+              <div key={id} className="col-span-1 row-span-1">
+                <div className="flex h-full items-center justify-center">
+                  <Link
+                    href={`/${href}`}
+                    className="flex flex-col items-center gap-y-1 md:gap-y-2">
+                    <div className="flex aspect-square w-12 items-center justify-center overflow-hidden rounded-full border border-neutral-800 md:w-16">
+                      {icon}
+                    </div>
+                    <p className="w-full truncate text-center text-xs font-semibold md:text-sm">
+                      <span className="inline lowercase md:hidden">
+                        {shortName}
+                      </span>
+                      <span className="hidden md:inline">{name}</span>
+                    </p>
+                  </Link>
+                </div>
+              </div>
+            );
+          })}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
-}
+};
+
+export default HomePage;
